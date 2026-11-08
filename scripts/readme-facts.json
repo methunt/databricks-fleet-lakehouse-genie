@@ -1,0 +1,15 @@
+{
+  "revenue": "$298.6M",
+  "trips": "85,410",
+  "mpg": "6.45",
+  "ontime": "33.3%",
+  "routes": 58,
+  "bronze_tables": 14,
+  "gold_tables": 5,
+  "metric_views": 4,
+  "benchmarks": 7,
+  "source_revenue_delta": "13.8%",
+  "source_ontime_delta": "34%",
+  "join_revenue_lost": "52%",
+  "trip_tables": 14
+}

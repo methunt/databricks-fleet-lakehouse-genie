@@ -1,0 +1,449 @@
+{
+  "datasets": [
+    {
+      "name": "ds_kpi",
+      "displayName": "Fleet KPIs (all time)",
+      "queryLines": [
+        "SELECT MEASURE(`Total Revenue`) AS total_revenue, ",
+        "MEASURE(`Total Trips`) AS total_trips, ",
+        "MEASURE(`On Time Rate`) AS on_time_rate, ",
+        "MEASURE(`Average MPG`) AS avg_mpg ",
+        "FROM trip_metrics"
+      ]
+    },
+    {
+      "name": "ds_monthly",
+      "displayName": "Monthly operations trend",
+      "queryLines": [
+        "SELECT `Trip Month` AS month, ",
+        "MEASURE(`Total Revenue`) AS revenue, ",
+        "MEASURE(`Total Trips`) AS trips, ",
+        "MEASURE(`On Time Rate`) AS on_time_rate, ",
+        "MEASURE(`Average MPG`) AS mpg ",
+        "FROM trip_metrics ",
+        "GROUP BY ALL ORDER BY month"
+      ]
+    },
+    {
+      "name": "ds_routes",
+      "displayName": "Top routes by revenue per mile",
+      "queryLines": [
+        "SELECT Route, ",
+        "`Origin City` AS origin_city, ",
+        "`Destination City` AS destination_city, ",
+        "MEASURE(`Revenue Per Mile`) AS revenue_per_mile, ",
+        "MEASURE(`Total Revenue`) AS revenue ",
+        "FROM trip_metrics ",
+        "GROUP BY ALL ORDER BY revenue_per_mile DESC LIMIT 10"
+      ]
+    },
+    {
+      "name": "ds_customers",
+      "displayName": "Customers with weakest on-time rate",
+      "queryLines": [
+        "SELECT `Customer Name` AS customer_name, ",
+        "MEASURE(`On Time Rate`) AS on_time_rate, ",
+        "MEASURE(`Total Revenue`) AS revenue ",
+        "FROM trip_metrics ",
+        "GROUP BY ALL ORDER BY on_time_rate ASC LIMIT 10"
+      ]
+    },
+    {
+      "name": "ds_drivers",
+      "displayName": "Driver scorecard",
+      "queryLines": [
+        "SELECT Driver, ",
+        "MEASURE(`Total Revenue`) AS revenue, ",
+        "MEASURE(`Average MPG`) AS mpg, ",
+        "MEASURE(`On Time Rate`) AS on_time_rate, ",
+        "MEASURE(`Trips Completed`) AS trips ",
+        "FROM driver_metrics ",
+        "WHERE Driver <> 'Unassigned' ",
+        "GROUP BY ALL ORDER BY revenue DESC LIMIT 15"
+      ]
+    },
+    {
+      "name": "ds_trucks",
+      "displayName": "Truck maintenance and downtime",
+      "queryLines": [
+        "SELECT Truck, ",
+        "MEASURE(`Maintenance Cost`) AS maintenance_cost, ",
+        "MEASURE(`Downtime Hours`) AS downtime_hours, ",
+        "MEASURE(`Maintenance Events`) AS maintenance_events ",
+        "FROM truck_maintenance_metrics ",
+        "GROUP BY ALL ORDER BY downtime_hours DESC LIMIT 15"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "overview",
+      "displayName": "Operations overview",
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1",
+      "layout": [
+        {
+          "widget": {
+            "name": "title",
+            "multilineTextboxSpec": {
+              "lines": [
+                "# Fleet Pulse — Trucking Operations (2022–2024)\n"
+              ]
+            }
+          },
+          "position": {"x": 0, "y": 0, "width": 12, "height": 1}
+        },
+        {
+          "widget": {
+            "name": "subtitle",
+            "multilineTextboxSpec": {
+              "lines": [
+                "**85,410 trips across 58 routes.** Medallion pipeline (14 bronze → 1 silver → 5 gold) on Lakeflow Declarative Pipelines, served through 4 governed Unity Catalog metric views. Every figure below reconciles to the trip facts — click **Ask Genie** to interrogate the same semantic layer in natural language.\n"
+              ]
+            }
+          },
+          "position": {"x": 0, "y": 1, "width": 12, "height": 1}
+        },
+        {
+          "widget": {
+            "name": "kpi-revenue",
+            "queries": [{
+              "name": "main_query",
+              "query": {
+                "datasetName": "ds_kpi",
+                "fields": [{"name": "total_revenue", "expression": "`total_revenue`"}],
+                "disaggregated": true
+              }
+            }],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "total_revenue",
+                  "displayName": "Total Revenue",
+                  "format": {
+                    "type": "number-currency",
+                    "currencyCode": "USD",
+                    "abbreviation": "compact",
+                    "decimalPlaces": {"type": "max", "places": 2}
+                  }
+                }
+              },
+              "frame": {"title": "Total Revenue", "showTitle": true}
+            }
+          },
+          "position": {"x": 0, "y": 2, "width": 3, "height": 3}
+        },
+        {
+          "widget": {
+            "name": "kpi-trips",
+            "queries": [{
+              "name": "main_query",
+              "query": {
+                "datasetName": "ds_kpi",
+                "fields": [{"name": "total_trips", "expression": "`total_trips`"}],
+                "disaggregated": true
+              }
+            }],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "total_trips",
+                  "displayName": "Trips Completed",
+                  "format": {
+                    "type": "number",
+                    "abbreviation": "compact",
+                    "decimalPlaces": {"type": "max", "places": 0}
+                  }
+                }
+              },
+              "frame": {"title": "Trips Completed", "showTitle": true}
+            }
+          },
+          "position": {"x": 3, "y": 2, "width": 3, "height": 3}
+        },
+        {
+          "widget": {
+            "name": "kpi-ontime",
+            "queries": [{
+              "name": "main_query",
+              "query": {
+                "datasetName": "ds_kpi",
+                "fields": [{"name": "on_time_rate", "expression": "`on_time_rate`"}],
+                "disaggregated": true
+              }
+            }],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "on_time_rate",
+                  "displayName": "On-Time Delivery",
+                  "format": {"type": "number-percent", "decimalPlaces": {"type": "max", "places": 1}}
+                }
+              },
+              "frame": {"title": "On-Time Delivery", "showTitle": true}
+            }
+          },
+          "position": {"x": 6, "y": 2, "width": 3, "height": 3}
+        },
+        {
+          "widget": {
+            "name": "kpi-mpg",
+            "queries": [{
+              "name": "main_query",
+              "query": {
+                "datasetName": "ds_kpi",
+                "fields": [{"name": "avg_mpg", "expression": "`avg_mpg`"}],
+                "disaggregated": true
+              }
+            }],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "avg_mpg",
+                  "displayName": "Fleet MPG",
+                  "format": {"type": "number-plain", "decimalPlaces": {"type": "max", "places": 2}, "formatTemplate": "{{ @formatted }} mpg"}
+                }
+              },
+              "frame": {"title": "Fleet Fuel Efficiency", "showTitle": true}
+            }
+          },
+          "position": {"x": 9, "y": 2, "width": 3, "height": 3}
+        },
+        {
+          "widget": {
+            "name": "chart-revenue-trend",
+            "queries": [{
+              "name": "main_query",
+              "query": {
+                "datasetName": "ds_monthly",
+                "fields": [
+                  {"name": "month", "expression": "`month`"},
+                  {"name": "revenue", "expression": "`revenue`"}
+                ],
+                "disaggregated": true,
+                "orders": [{"direction": "ASC", "expression": "`month`"}]
+              }
+            }],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {"fieldName": "month", "scale": {"type": "temporal"}, "displayName": "Month"},
+                "y": {"fieldName": "revenue", "scale": {"type": "quantitative"}, "displayName": "Revenue"}
+              },
+              "frame": {"title": "Monthly Revenue", "showTitle": true}
+            }
+          },
+          "position": {"x": 0, "y": 5, "width": 8, "height": 5}
+        },
+        {
+          "widget": {
+            "name": "chart-mpg-trend",
+            "queries": [{
+              "name": "main_query",
+              "query": {
+                "datasetName": "ds_monthly",
+                "fields": [
+                  {"name": "month", "expression": "`month`"},
+                  {"name": "mpg", "expression": "`mpg`"}
+                ],
+                "disaggregated": true,
+                "orders": [{"direction": "ASC", "expression": "`month`"}]
+              }
+            }],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {"fieldName": "month", "scale": {"type": "temporal"}, "displayName": "Month"},
+                "y": {"fieldName": "mpg", "scale": {"type": "quantitative"}, "displayName": "MPG"}
+              },
+              "frame": {"title": "Monthly Fuel Efficiency", "showTitle": true}
+            }
+          },
+          "position": {"x": 8, "y": 5, "width": 4, "height": 5}
+        },
+        {
+          "widget": {
+            "name": "chart-routes",
+            "queries": [{
+              "name": "main_query",
+              "query": {
+                "datasetName": "ds_routes",
+                "fields": [
+                  {"name": "Route", "expression": "`Route`"},
+                  {"name": "revenue_per_mile", "expression": "`revenue_per_mile`"}
+                ],
+                "disaggregated": true
+              }
+            }],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {"fieldName": "Route", "scale": {"type": "categorical"}, "displayName": "Route"},
+                "y": {"fieldName": "revenue_per_mile", "scale": {"type": "quantitative"}, "displayName": "Revenue per Mile"}
+              },
+              "frame": {"title": "Top 10 Routes by Revenue per Mile", "showTitle": true}
+            }
+          },
+          "position": {"x": 0, "y": 10, "width": 6, "height": 5}
+        },
+        {
+          "widget": {
+            "name": "chart-customers",
+            "queries": [{
+              "name": "main_query",
+              "query": {
+                "datasetName": "ds_customers",
+                "fields": [
+                  {"name": "customer_name", "expression": "`customer_name`"},
+                  {"name": "on_time_rate", "expression": "`on_time_rate`"}
+                ],
+                "disaggregated": true
+              }
+            }],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {"fieldName": "customer_name", "scale": {"type": "categorical"}, "displayName": "Customer"},
+                "y": {"fieldName": "on_time_rate", "scale": {"type": "quantitative"}, "displayName": "On-Time Rate"}
+              },
+              "frame": {"title": "Weakest 10 Customers by On-Time Rate", "showTitle": true}
+            }
+          },
+          "position": {"x": 6, "y": 10, "width": 6, "height": 5}
+        },
+        {
+          "widget": {
+            "name": "table-drivers",
+            "queries": [{
+              "name": "main_query",
+              "query": {
+                "datasetName": "ds_drivers",
+                "fields": [
+                  {"name": "Driver", "expression": "`Driver`"},
+                  {"name": "trips", "expression": "`trips`"},
+                  {"name": "revenue", "expression": "`revenue`"},
+                  {"name": "mpg", "expression": "`mpg`"},
+                  {"name": "on_time_rate", "expression": "`on_time_rate`"}
+                ],
+                "disaggregated": true
+              }
+            }],
+            "spec": {
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {"fieldName": "Driver", "displayName": "Driver"},
+                  {"fieldName": "trips", "displayName": "Trips"},
+                  {
+                    "fieldName": "revenue",
+                    "displayName": "Revenue",
+                    "format": {
+                      "type": "number-currency",
+                      "currencyCode": "USD",
+                      "abbreviation": "compact",
+                      "decimalPlaces": {"type": "max", "places": 2}
+                    }
+                  },
+                  {
+                    "fieldName": "mpg",
+                    "displayName": "MPG",
+                    "format": {"type": "number-plain", "decimalPlaces": {"type": "max", "places": 2}}
+                  },
+                  {
+                    "fieldName": "on_time_rate",
+                    "displayName": "On-Time",
+                    "format": {"type": "number-percent", "decimalPlaces": {"type": "max", "places": 1}}
+                  }
+                ]
+              },
+              "frame": {"title": "Driver Scorecard — Top 15 by Revenue", "showTitle": true}
+            }
+          },
+          "position": {"x": 0, "y": 15, "width": 6, "height": 6}
+        },
+        {
+          "widget": {
+            "name": "table-trucks",
+            "queries": [{
+              "name": "main_query",
+              "query": {
+                "datasetName": "ds_trucks",
+                "fields": [
+                  {"name": "Truck", "expression": "`Truck`"},
+                  {"name": "maintenance_events", "expression": "`maintenance_events`"},
+                  {"name": "maintenance_cost", "expression": "`maintenance_cost`"},
+                  {"name": "downtime_hours", "expression": "`downtime_hours`"}
+                ],
+                "disaggregated": true
+              }
+            }],
+            "spec": {
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {"fieldName": "Truck", "displayName": "Truck"},
+                  {"fieldName": "maintenance_events", "displayName": "Service Events"},
+                  {
+                    "fieldName": "maintenance_cost",
+                    "displayName": "Maintenance Cost",
+                    "format": {
+                      "type": "number-currency",
+                      "currencyCode": "USD",
+                      "abbreviation": "compact",
+                      "decimalPlaces": {"type": "max", "places": 2}
+                    }
+                  },
+                  {
+                    "fieldName": "downtime_hours",
+                    "displayName": "Downtime (hrs)",
+                    "format": {"type": "number-plain", "decimalPlaces": {"type": "max", "places": 1}}
+                  }
+                ]
+              },
+              "frame": {"title": "Truck Maintenance — Top 15 by Downtime", "showTitle": true}
+            }
+          },
+          "position": {"x": 6, "y": 15, "width": 6, "height": 6}
+        }
+      ]
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "canvasBackgroundColor": {"light": "#FCFCFC", "dark": "#1F272D"},
+      "widgetBackgroundColor": {"light": "#FFFFFF", "dark": "#11171C"},
+      "widgetBorderColor": {"light": "#FFFFFF", "dark": "#11171C"},
+      "fontColor": {"light": "#11171C", "dark": "#E8ECF0"},
+      "selectionColor": {"light": "#0072B2", "dark": "#8ACAFF"},
+      "visualizationColors": [
+        "#0072B2",
+        "#E69F00",
+        "#009E73",
+        "#CC79A7",
+        "#D55E00",
+        "#56B4E9",
+        "#F0E442"
+      ],
+      "widgetHeaderAlignment": "LEFT"
+    },
+    "genieSpace": {
+      "isEnabled": true,
+      "overrideId": "<GENIE_SPACE_ID>",
+      "enablementMode": "ENABLED"
+    }
+  }
+}

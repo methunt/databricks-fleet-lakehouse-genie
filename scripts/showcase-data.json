@@ -1,0 +1,1021 @@
+{
+ "generated": "2026-11-08",
+ "totals": {
+  "logged": 85333.0,
+  "miles": 122159201.0,
+  "mpg": 6.447661512193144,
+  "otp": 0.3327434872792472,
+  "rev": 298621428.9399998,
+  "trips": 85410.0
+ },
+ "yearly": [
+  {
+   "y": 2022,
+   "rev": 99922318.92000046
+  },
+  {
+   "y": 2023,
+   "rev": 98908237.79999952
+  },
+  {
+   "y": 2024,
+   "rev": 99790872.2199995
+  }
+ ],
+ "monthly": [
+  {
+   "otp": 0.33698296836982966,
+   "mpg": 6.446639642345928
+  },
+  {
+   "otp": 0.3391463974300138,
+   "mpg": 6.433236413931969
+  },
+  {
+   "otp": 0.34472573839662446,
+   "mpg": 6.440842465262971
+  },
+  {
+   "otp": 0.3277919863597613,
+   "mpg": 6.46309169471224
+  },
+  {
+   "otp": 0.32331136738056016,
+   "mpg": 6.446714989411827
+  },
+  {
+   "otp": 0.343013468013468,
+   "mpg": 6.438388379694704
+  },
+  {
+   "otp": 0.33705080545229243,
+   "mpg": 6.450622673198115
+  },
+  {
+   "otp": 0.34094551282051283,
+   "mpg": 6.4427452507432355
+  },
+  {
+   "otp": 0.3246527777777778,
+   "mpg": 6.442588108037024
+  },
+  {
+   "otp": 0.34359805510534847,
+   "mpg": 6.446922517245504
+  },
+  {
+   "otp": 0.33432203389830506,
+   "mpg": 6.442521261936378
+  },
+  {
+   "otp": 0.3351578947368421,
+   "mpg": 6.436733039507396
+  },
+  {
+   "otp": 0.3303241690603201,
+   "mpg": 6.439400817067646
+  },
+  {
+   "otp": 0.32771535580524347,
+   "mpg": 6.4408188609829296
+  },
+  {
+   "otp": 0.3179933665008292,
+   "mpg": 6.4621344388876265
+  },
+  {
+   "otp": 0.3544520547945205,
+   "mpg": 6.422946045255289
+  },
+  {
+   "otp": 0.31686541737649065,
+   "mpg": 6.442986634925751
+  },
+  {
+   "otp": 0.3235294117647059,
+   "mpg": 6.4707916388917175
+  },
+  {
+   "otp": 0.3366214549938348,
+   "mpg": 6.462750755478883
+  },
+  {
+   "otp": 0.33233788395904434,
+   "mpg": 6.442451528699568
+  },
+  {
+   "otp": 0.33820369574559517,
+   "mpg": 6.4396173365427165
+  },
+  {
+   "otp": 0.32957863996662495,
+   "mpg": 6.442684897511886
+  },
+  {
+   "otp": 0.32656514382402707,
+   "mpg": 6.43481945852123
+  },
+  {
+   "otp": 0.3100474342388961,
+   "mpg": 6.440385400969601
+  },
+  {
+   "otp": 0.3344439816743024,
+   "mpg": 6.4291495168049915
+  },
+  {
+   "otp": 0.3162770180855756,
+   "mpg": 6.432697276404678
+  },
+  {
+   "otp": 0.3311394487865076,
+   "mpg": 6.465386204843831
+  },
+  {
+   "otp": 0.33814783347493627,
+   "mpg": 6.4441928335525995
+  },
+  {
+   "otp": 0.32555282555282555,
+   "mpg": 6.460746573954251
+  },
+  {
+   "otp": 0.3444995864350703,
+   "mpg": 6.4552284688521295
+  },
+  {
+   "otp": 0.3258145363408521,
+   "mpg": 6.449005101725323
+  },
+  {
+   "otp": 0.32728771640560594,
+   "mpg": 6.45189623417282
+  },
+  {
+   "otp": 0.34587430525865753,
+   "mpg": 6.477931809373946
+  },
+  {
+   "otp": 0.3387227162489895,
+   "mpg": 6.4576895259385845
+  },
+  {
+   "otp": 0.32626219770895204,
+   "mpg": 6.466801413263105
+  },
+  {
+   "otp": 0.3484182776801406,
+   "mpg": 6.450056579661549
+  }
+ ],
+ "routes": [
+  {
+   "id": "RTE00023",
+   "o": "Miami",
+   "d": "Dallas",
+   "rpm": 2.4808545041689563
+  },
+  {
+   "id": "RTE00015",
+   "o": "Philadelphia",
+   "d": "New York",
+   "rpm": 3.6173544677737715
+  },
+  {
+   "id": "RTE00035",
+   "o": "Las Vegas",
+   "d": "Dallas",
+   "rpm": 1.97045304900614
+  },
+  {
+   "id": "RTE00024",
+   "o": "Miami",
+   "d": "Philadelphia",
+   "rpm": 2.7825165013314734
+  },
+  {
+   "id": "RTE00037",
+   "o": "Las Vegas",
+   "d": "New York",
+   "rpm": 1.7129107486013573
+  },
+  {
+   "id": "RTE00012",
+   "o": "Phoenix",
+   "d": "Philadelphia",
+   "rpm": 2.8446233478447027
+  },
+  {
+   "id": "RTE00017",
+   "o": "Philadelphia",
+   "d": "Minneapolis",
+   "rpm": 2.149234820983696
+  },
+  {
+   "id": "RTE00034",
+   "o": "Portland",
+   "d": "Columbus",
+   "rpm": 2.4158016543846617
+  },
+  {
+   "id": "RTE00032",
+   "o": "Portland",
+   "d": "Detroit",
+   "rpm": 2.1595410745955514
+  },
+  {
+   "id": "RTE00050",
+   "o": "Columbus",
+   "d": "Kansas City",
+   "rpm": 2.217060026406618
+  },
+  {
+   "id": "RTE00031",
+   "o": "Denver",
+   "d": "Kansas City",
+   "rpm": 2.515186156557318
+  },
+  {
+   "id": "RTE00039",
+   "o": "Minneapolis",
+   "d": "Atlanta",
+   "rpm": 2.4098961681934425
+  },
+  {
+   "id": "RTE00044",
+   "o": "Charlotte",
+   "d": "Portland",
+   "rpm": 2.9411438560300365
+  },
+  {
+   "id": "RTE00056",
+   "o": "Kansas City",
+   "d": "Portland",
+   "rpm": 2.611243377646252
+  },
+  {
+   "id": "RTE00007",
+   "o": "Dallas",
+   "d": "New York",
+   "rpm": 2.8204865773120136
+  },
+  {
+   "id": "RTE00025",
+   "o": "Miami",
+   "d": "Seattle",
+   "rpm": 1.8034801666165208
+  },
+  {
+   "id": "RTE00011",
+   "o": "New York",
+   "d": "Columbus",
+   "rpm": 2.0010995310057322
+  },
+  {
+   "id": "RTE00042",
+   "o": "Charlotte",
+   "d": "Seattle",
+   "rpm": 2.520583938377979
+  },
+  {
+   "id": "RTE00016",
+   "o": "Philadelphia",
+   "d": "Seattle",
+   "rpm": 2.635935216103734
+  },
+  {
+   "id": "RTE00028",
+   "o": "Seattle",
+   "d": "Houston",
+   "rpm": 2.120113235120802
+  },
+  {
+   "id": "RTE00030",
+   "o": "Seattle",
+   "d": "Indianapolis",
+   "rpm": 2.7573834187811666
+  },
+  {
+   "id": "RTE00019",
+   "o": "Houston",
+   "d": "Detroit",
+   "rpm": 2.6274046785038414
+  },
+  {
+   "id": "RTE00014",
+   "o": "Phoenix",
+   "d": "Kansas City",
+   "rpm": 2.322356683066797
+  },
+  {
+   "id": "RTE00038",
+   "o": "Las Vegas",
+   "d": "Kansas City",
+   "rpm": 2.911540382019515
+  },
+  {
+   "id": "RTE00058",
+   "o": "Kansas City",
+   "d": "Indianapolis",
+   "rpm": 2.5146720512190415
+  },
+  {
+   "id": "RTE00003",
+   "o": "Chicago",
+   "d": "Los Angeles",
+   "rpm": 2.7895902072740872
+  },
+  {
+   "id": "RTE00018",
+   "o": "Philadelphia",
+   "d": "Indianapolis",
+   "rpm": 2.3917605133493733
+  },
+  {
+   "id": "RTE00027",
+   "o": "Detroit",
+   "d": "Houston",
+   "rpm": 2.3423757648846855
+  },
+  {
+   "id": "RTE00041",
+   "o": "Minneapolis",
+   "d": "Houston",
+   "rpm": 2.937580796961443
+  },
+  {
+   "id": "RTE00043",
+   "o": "Charlotte",
+   "d": "Denver",
+   "rpm": 1.7016681420616357
+  },
+  {
+   "id": "RTE00055",
+   "o": "Kansas City",
+   "d": "Miami",
+   "rpm": 2.73210697348655
+  },
+  {
+   "id": "RTE00021",
+   "o": "Houston",
+   "d": "Portland",
+   "rpm": 2.6814187081464715
+  },
+  {
+   "id": "RTE00053",
+   "o": "Kansas City",
+   "d": "Atlanta",
+   "rpm": 2.635261418583436
+  },
+  {
+   "id": "RTE00048",
+   "o": "Columbus",
+   "d": "Portland",
+   "rpm": 2.9796084593452075
+  },
+  {
+   "id": "RTE00001",
+   "o": "Atlanta",
+   "d": "Chicago",
+   "rpm": 1.9452025681548766
+  },
+  {
+   "id": "RTE00046",
+   "o": "Columbus",
+   "d": "Los Angeles",
+   "rpm": 2.89587252094602
+  },
+  {
+   "id": "RTE00010",
+   "o": "New York",
+   "d": "Philadelphia",
+   "rpm": 2.521730047508513
+  },
+  {
+   "id": "RTE00005",
+   "o": "Chicago",
+   "d": "Las Vegas",
+   "rpm": 2.6347813348752442
+  },
+  {
+   "id": "RTE00013",
+   "o": "Phoenix",
+   "d": "Denver",
+   "rpm": 1.9573136180445407
+  },
+  {
+   "id": "RTE00009",
+   "o": "Dallas",
+   "d": "Indianapolis",
+   "rpm": 2.137401414032196
+  },
+  {
+   "id": "RTE00036",
+   "o": "Las Vegas",
+   "d": "Los Angeles",
+   "rpm": 3.1341174734716435
+  },
+  {
+   "id": "RTE00047",
+   "o": "Columbus",
+   "d": "Philadelphia",
+   "rpm": 2.299988777429467
+  },
+  {
+   "id": "RTE00033",
+   "o": "Portland",
+   "d": "Seattle",
+   "rpm": 3.015532370104978
+  },
+  {
+   "id": "RTE00040",
+   "o": "Minneapolis",
+   "d": "Los Angeles",
+   "rpm": 2.646792348689203
+  },
+  {
+   "id": "RTE00008",
+   "o": "Dallas",
+   "d": "Denver",
+   "rpm": 2.7766082960560174
+  },
+  {
+   "id": "RTE00051",
+   "o": "Memphis",
+   "d": "Los Angeles",
+   "rpm": 2.0797024430414446
+  },
+  {
+   "id": "RTE00057",
+   "o": "Kansas City",
+   "d": "Charlotte",
+   "rpm": 2.744998327007558
+  },
+  {
+   "id": "RTE00045",
+   "o": "Charlotte",
+   "d": "Memphis",
+   "rpm": 2.5963077813967224
+  },
+  {
+   "id": "RTE00004",
+   "o": "Chicago",
+   "d": "Portland",
+   "rpm": 2.008855778388656
+  },
+  {
+   "id": "RTE00026",
+   "o": "Miami",
+   "d": "Denver",
+   "rpm": 1.9740570205605694
+  },
+  {
+   "id": "RTE00054",
+   "o": "Kansas City",
+   "d": "Los Angeles",
+   "rpm": 2.1783156511761916
+  },
+  {
+   "id": "RTE00002",
+   "o": "Atlanta",
+   "d": "Miami",
+   "rpm": 2.3354022340436558
+  },
+  {
+   "id": "RTE00006",
+   "o": "Chicago",
+   "d": "Charlotte",
+   "rpm": 2.448673902621398
+  },
+  {
+   "id": "RTE00020",
+   "o": "Houston",
+   "d": "Seattle",
+   "rpm": 2.0818167165221153
+  },
+  {
+   "id": "RTE00049",
+   "o": "Columbus",
+   "d": "Minneapolis",
+   "rpm": 2.836702258673702
+  },
+  {
+   "id": "RTE00029",
+   "o": "Seattle",
+   "d": "Charlotte",
+   "rpm": 2.7574691604353525
+  },
+  {
+   "id": "RTE00022",
+   "o": "Houston",
+   "d": "Memphis",
+   "rpm": 2.299291646814288
+  },
+  {
+   "id": "RTE00052",
+   "o": "Memphis",
+   "d": "Minneapolis",
+   "rpm": 1.9937911049617139
+  }
+ ],
+ "customers": [
+  {
+   "n": "First Foods",
+   "otp": 0.3419811320754717
+  },
+  {
+   "n": "First Logistics",
+   "otp": 0.33538315988647116
+  },
+  {
+   "n": "ABC Foods",
+   "otp": 0.3169469598965071
+  },
+  {
+   "n": "Global Wholesale",
+   "otp": 0.32217261904761907
+  },
+  {
+   "n": "American Retail",
+   "otp": 0.32455089820359284
+  },
+  {
+   "n": "XYZ Supply Chain",
+   "otp": 0.28604923798358733
+  },
+  {
+   "n": "Elite Industries",
+   "otp": 0.33690476190476193
+  },
+  {
+   "n": "First Group",
+   "otp": 0.33011003667889294
+  },
+  {
+   "n": "American Manufacturing",
+   "otp": 0.3322475570032573
+  },
+  {
+   "n": "Elite Foods",
+   "otp": 0.32909930715935337
+  },
+  {
+   "n": "Premier Foods",
+   "otp": 0.3613053613053613
+  },
+  {
+   "n": "Pacific Industries",
+   "otp": 0.3090507726269316
+  },
+  {
+   "n": "Pacific Logistics",
+   "otp": 0.32169576059850374
+  },
+  {
+   "n": "Pacific Foods",
+   "otp": 0.31630170316301703
+  },
+  {
+   "n": "National Corp",
+   "otp": 0.37995337995337997
+  },
+  {
+   "n": "First Wholesale",
+   "otp": 0.3507767784137367
+  },
+  {
+   "n": "American Corp",
+   "otp": 0.3479648842777334
+  },
+  {
+   "n": "First Manufacturing",
+   "otp": 0.35035349567949725
+  },
+  {
+   "n": "Superior Supply Chain",
+   "otp": 0.3460207612456747
+  },
+  {
+   "n": "United Retail",
+   "otp": 0.33513513513513515
+  },
+  {
+   "n": "Superior Corp",
+   "otp": 0.35469107551487417
+  },
+  {
+   "n": "Continental Supply Chain",
+   "otp": 0.33587786259541985
+  },
+  {
+   "n": "XYZ Logistics",
+   "otp": 0.3378839590443686
+  },
+  {
+   "n": "National Distribution",
+   "otp": 0.34382284382284384
+  },
+  {
+   "n": "ABC Corp",
+   "otp": 0.34471803018268465
+  },
+  {
+   "n": "XYZ Group",
+   "otp": 0.33408071748878926
+  },
+  {
+   "n": "First Industries",
+   "otp": 0.3333333333333333
+  },
+  {
+   "n": "Metro Wholesale",
+   "otp": 0.3118218161050828
+  },
+  {
+   "n": "Superior Distribution",
+   "otp": 0.33222591362126247
+  },
+  {
+   "n": "Elite Wholesale",
+   "otp": 0.3088235294117647
+  },
+  {
+   "n": "ABC Distribution",
+   "otp": 0.3072289156626506
+  },
+  {
+   "n": "United Supply Chain",
+   "otp": 0.32516703786191536
+  },
+  {
+   "n": "XYZ Foods",
+   "otp": 0.33559066967644846
+  },
+  {
+   "n": "Pacific Supply Chain",
+   "otp": 0.344
+  },
+  {
+   "n": "ABC Supply Chain",
+   "otp": 0.33880597014925373
+  },
+  {
+   "n": "Pacific Corp",
+   "otp": 0.33781763826606875
+  },
+  {
+   "n": "United Distribution",
+   "otp": 0.3522975929978118
+  },
+  {
+   "n": "Elite Retail",
+   "otp": 0.32481450948062657
+  },
+  {
+   "n": "First Supply Chain",
+   "otp": 0.3436123348017621
+  },
+  {
+   "n": "Continental Manufacturing",
+   "otp": 0.33360995850622405
+  },
+  {
+   "n": "XYZ Wholesale",
+   "otp": 0.32596371882086167
+  },
+  {
+   "n": "First Retail",
+   "otp": 0.3402948402948403
+  },
+  {
+   "n": "First Distribution",
+   "otp": 0.34844868735083534
+  },
+  {
+   "n": "Continental Group",
+   "otp": 0.32224532224532226
+  },
+  {
+   "n": "Elite Supply Chain",
+   "otp": 0.4028103044496487
+  },
+  {
+   "n": "Metro Group",
+   "otp": 0.3765432098765432
+  },
+  {
+   "n": "American Industries",
+   "otp": 0.3183475091130012
+  },
+  {
+   "n": "ABC Industries",
+   "otp": 0.33261802575107297
+  },
+  {
+   "n": "Pacific Retail",
+   "otp": 0.33737864077669905
+  },
+  {
+   "n": "ABC Wholesale",
+   "otp": 0.32145684877276326
+  },
+  {
+   "n": "Metro Retail",
+   "otp": 0.36231884057971014
+  },
+  {
+   "n": "National Industries",
+   "otp": 0.3357142857142857
+  },
+  {
+   "n": "Global Corp",
+   "otp": 0.3366093366093366
+  },
+  {
+   "n": "Metro Distribution",
+   "otp": 0.3467181467181467
+  },
+  {
+   "n": "Premier Industries",
+   "otp": 0.3103057757644394
+  },
+  {
+   "n": "Metro Logistics",
+   "otp": 0.32685714285714285
+  },
+  {
+   "n": "XYZ Distribution",
+   "otp": 0.3422273781902552
+  },
+  {
+   "n": "Superior Group",
+   "otp": 0.33588957055214724
+  },
+  {
+   "n": "ABC Manufacturing",
+   "otp": 0.3254994124559342
+  },
+  {
+   "n": "National Retail",
+   "otp": 0.33358895705521474
+  },
+  {
+   "n": "XYZ Industries",
+   "otp": 0.3194263363754889
+  },
+  {
+   "n": "ABC Group",
+   "otp": 0.336996336996337
+  },
+  {
+   "n": "National Wholesale",
+   "otp": 0.3068181818181818
+  },
+  {
+   "n": "XYZ Corp",
+   "otp": 0.3215962441314554
+  },
+  {
+   "n": "Continental Distribution",
+   "otp": 0.32805429864253394
+  },
+  {
+   "n": "Premier Wholesale",
+   "otp": 0.33784860557768925
+  },
+  {
+   "n": "United Industries",
+   "otp": 0.39950372208436724
+  },
+  {
+   "n": "United Corp",
+   "otp": 0.3202614379084967
+  },
+  {
+   "n": "Pacific Group",
+   "otp": 0.3583535108958838
+  },
+  {
+   "n": "ABC Retail",
+   "otp": 0.3616504854368932
+  },
+  {
+   "n": "Metro Supply Chain",
+   "otp": 0.2822384428223844
+  },
+  {
+   "n": "Global Logistics",
+   "otp": 0.3356164383561644
+  },
+  {
+   "n": "Premier Group",
+   "otp": 0.3456221198156682
+  },
+  {
+   "n": "Superior Retail",
+   "otp": 0.3325
+  },
+  {
+   "n": "Metro Corp",
+   "otp": 0.33736884584342214
+  },
+  {
+   "n": "Premier Retail",
+   "otp": 0.3548387096774194
+  },
+  {
+   "n": "United Foods",
+   "otp": 0.3212669683257919
+  },
+  {
+   "n": "Global Manufacturing",
+   "otp": 0.3725
+  },
+  {
+   "n": "Global Foods",
+   "otp": 0.32242990654205606
+  },
+  {
+   "n": "Global Group",
+   "otp": 0.29411764705882354
+  },
+  {
+   "n": "Premier Logistics",
+   "otp": 0.3349282296650718
+  },
+  {
+   "n": "National Supply Chain",
+   "otp": 0.32250300842358604
+  },
+  {
+   "n": "Superior Industries",
+   "otp": 0.3204819277108434
+  },
+  {
+   "n": "Continental Wholesale",
+   "otp": 0.3629807692307692
+  },
+  {
+   "n": "American Supply Chain",
+   "otp": 0.3256880733944954
+  },
+  {
+   "n": "Superior Foods",
+   "otp": 0.32142857142857145
+  },
+  {
+   "n": "National Logistics",
+   "otp": 0.35224586288416077
+  },
+  {
+   "n": "United Group",
+   "otp": 0.3238341968911917
+  },
+  {
+   "n": "First Corp",
+   "otp": 0.32109004739336494
+  },
+  {
+   "n": "Elite Distribution",
+   "otp": 0.32873563218390806
+  },
+  {
+   "n": "National Foods",
+   "otp": 0.3579418344519016
+  },
+  {
+   "n": "Metro Manufacturing",
+   "otp": 0.3027295285359802
+  },
+  {
+   "n": "Continental Foods",
+   "otp": 0.2997711670480549
+  },
+  {
+   "n": "XYZ Retail",
+   "otp": 0.29175946547884185
+  },
+  {
+   "n": "Continental Logistics",
+   "otp": 0.335632183908046
+  },
+  {
+   "n": "Premier Manufacturing",
+   "otp": 0.34813925570228094
+  },
+  {
+   "n": "American Logistics",
+   "otp": 0.3460620525059666
+  },
+  {
+   "n": "Continental Corp",
+   "otp": 0.3402061855670103
+  },
+  {
+   "n": "American Distribution",
+   "otp": 0.33653846153846156
+  },
+  {
+   "n": "Continental Retail",
+   "otp": 0.27791563275434245
+  },
+  {
+   "n": "Metro Foods",
+   "otp": 0.31965442764578833
+  },
+  {
+   "n": "Elite Group",
+   "otp": 0.32653061224489793
+  },
+  {
+   "n": "Global Distribution",
+   "otp": 0.3201754385964912
+  },
+  {
+   "n": "Pacific Manufacturing",
+   "otp": 0.2684085510688836
+  },
+  {
+   "n": "Elite Corp",
+   "otp": 0.3797752808988764
+  },
+  {
+   "n": "Premier Supply Chain",
+   "otp": 0.3204819277108434
+  },
+  {
+   "n": "Continental Industries",
+   "otp": 0.3190045248868778
+  }
+ ],
+ "drivers": [
+  {
+   "d": "Thomas Gonzalez",
+   "rev": 5168392.960000004
+  },
+  {
+   "d": "William Wilson",
+   "rev": 4911881.609999993
+  },
+  {
+   "d": "John Thomas",
+   "rev": 4893049.700000005
+  },
+  {
+   "d": "William Anderson",
+   "rev": 4889302.1200000085
+  },
+  {
+   "d": "Thomas Wilson",
+   "rev": 4876291.59
+  },
+  {
+   "d": "David Anderson",
+   "rev": 4785362.130000002
+  },
+  {
+   "d": "David Smith",
+   "rev": 4781248.789999997
+  },
+  {
+   "d": "Michael Anderson",
+   "rev": 4772913.540000001
+  }
+ ],
+ "unassigned": {
+  "trips": 1714.0,
+  "rev": 5988414.349999995
+ },
+ "truck": {
+  "t": "3626",
+  "dt": 425.70000000000005,
+  "ev": 13.0
+ },
+ "maint": {
+  "cost": 5730573.279999992,
+  "ev": 2920.0
+ },
+ "source": {
+  "rev": 257264550.59000033,
+  "trips": 83696.0,
+  "otp": 0.44599574372760026
+ },
+ "files": {
+  "driver_monthly_metrics": [
+   1488,
+   1488,
+   1488
+  ],
+  "truck_utilization_metrics": [
+   1104,
+   1104,
+   1104
+  ]
+ },
+ "joinfix": {
+  "bad_rev": 143439832,
+  "bad_ratio": 0.046,
+  "good_rev": 292719973,
+  "good_ratio": 0.0235
+ }
+}

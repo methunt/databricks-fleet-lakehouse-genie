@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 369"
+     width="1200" height="369" role="img" aria-label="Why this project is worth a look">
+  <style>
+    .rise  { animation: rise .55s cubic-bezier(.2,.7,.3,1) both; }
+    @keyframes rise { from { transform: translateY(9px) } to { transform: translateY(0) } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important } }</style>
+
+  <g class="rise" style="animation-delay:0.15s">
+    <rect x="0" y="0" width="386" height="369" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="0" y="0" width="386" height="5" rx="2.5" fill="#4CC38A"/>
+    <circle cx="52" cy="64" r="28" fill="#4CC38A" fill-opacity="0.14"/>
+    <text x="52" y="75" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+          font-size="29">◆</text>
+    <text x="28" y="124" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.4">One source of truth</text>
+    <text x="28" y="158" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">All four metric views read the</text>
+    <text x="28" y="189" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">same trip fact, so revenue,</text>
+    <text x="28" y="220" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">trips and MPG agree across</text>
+    <text x="28" y="251" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">every view and the dashboard.</text>
+    <rect x="28" y="314" width="330" height="1" fill="#30363D"/>
+    <text x="28" y="337" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="19.5" font-weight="700"
+          fill="#4CC38A" letter-spacing="0.3">$298.6M · 85,410 trips</text>
+  </g>
+  <g class="rise" style="animation-delay:0.27s">
+    <rect x="406" y="0" width="386" height="369" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="406" y="0" width="386" height="5" rx="2.5" fill="#F0B429"/>
+    <circle cx="458" cy="64" r="28" fill="#F0B429" fill-opacity="0.14"/>
+    <text x="458" y="75" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+          font-size="29">▲</text>
+    <text x="434" y="124" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.4">Reconciled, not assumed</text>
+    <text x="434" y="158" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">The dataset's own monthly</text>
+    <text x="434" y="189" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">aggregates disagreed with the</text>
+    <text x="434" y="220" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">facts by 13.8% on revenue.</text>
+    <text x="434" y="251" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">Finding that was the point.</text>
+    <rect x="434" y="314" width="330" height="1" fill="#30363D"/>
+    <text x="434" y="337" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="19.5" font-weight="700"
+          fill="#F0B429" letter-spacing="0.3">13.8% revenue gap found</text>
+  </g>
+  <g class="rise" style="animation-delay:0.39s">
+    <rect x="812" y="0" width="386" height="369" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="812" y="0" width="386" height="5" rx="2.5" fill="#E58FC0"/>
+    <circle cx="864" cy="64" r="28" fill="#E58FC0" fill-opacity="0.14"/>
+    <text x="864" y="75" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+          font-size="29">●</text>
+    <text x="840" y="124" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.4">Governed KPIs</text>
+    <text x="840" y="158" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">Ratios are MEASURE(a) /</text>
+    <text x="840" y="189" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">MEASURE(b) over atomic sums —</text>
+    <text x="840" y="220" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">never an average of an</text>
+    <text x="840" y="251" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">average, which is where MPG</text>
+    <text x="840" y="282" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">silently drifts.</text>
+    <rect x="840" y="314" width="330" height="1" fill="#30363D"/>
+    <text x="840" y="337" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="19.5" font-weight="700"
+          fill="#E58FC0" letter-spacing="0.3">4 metric views · 7 benchmarks</text>
+  </g>
+</svg>

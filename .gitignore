@@ -1,0 +1,21 @@
+# Python / env
+.venv
+__pycache__/
+*.py[cod]
+*.lock
+
+# Databricks local state
+.databricks
+.vscode
+.claude
+.omp
+
+# Generated artifacts
+annual_csvs/
+*.payload.json
+_csvcheck/
+*.log
+
+# Working notes — local only, not part of the published repo
+plan.md
+status.md

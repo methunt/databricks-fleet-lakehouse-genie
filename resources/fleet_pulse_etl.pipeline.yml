@@ -1,0 +1,12 @@
+resources:
+  pipelines:
+    fleet_pulse_etl:
+      name: "Fleet Pulse - Trucking Operations Pipeline"
+      catalog: ${var.catalog}
+      schema: bronze
+      serverless: true
+      libraries:
+        - glob:
+            include: ../src/fleet_pulse_etl/transformations/**
+      configuration:
+        pipelines.autoOptimize.managed: "true"

@@ -1,0 +1,15 @@
+include:
+  - resources/*.yml
+
+bundle:
+  name: fleet_pulse
+
+variables:
+  catalog:
+    description: Unity Catalog catalog name for this project
+    default: fleet_pulse
+
+targets:
+  dev:
+    mode: development
+    default: true

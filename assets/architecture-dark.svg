@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 382"
+     width="1200" height="382" role="img" aria-label="Dataflow from yearly CSVs to the Genie agent and dashboard">
+  <style>
+    .rise  { animation: rise .55s cubic-bezier(.2,.7,.3,1) both; }
+    @keyframes rise { from { transform: translateY(9px) } to { transform: translateY(0) } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important } }</style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8B949E"/>
+    </marker>
+  </defs>
+
+  <g class="rise" style="animation-delay:0.10s">
+    <rect x="40" y="54" width="173" height="236" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="40" y="54" width="173" height="5" rx="2.5" fill="#F0B429"/>
+    <text x="58" y="98" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="20" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.2">30 CSVs</text>
+    <text x="58" y="130" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">24 fact · 6 dim</text>
+    <text x="58" y="156" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">one per year</text>
+    <text x="58" y="182" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">python loader</text>
+  </g>
+  <line x1="215" y1="172" x2="227" y2="172"
+        stroke="#8B949E" stroke-width="2" stroke-linecap="round" marker-end="url(#a)"/>
+  <g class="rise" style="animation-delay:0.19s">
+    <rect x="229" y="54" width="173" height="236" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="229" y="54" width="173" height="5" rx="2.5" fill="#56B4E9"/>
+    <text x="247" y="98" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="20" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.2">bronze</text>
+    <text x="247" y="130" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">14 streams</text>
+    <text x="247" y="156" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">Auto Loader</text>
+    <text x="247" y="182" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">CLUSTER BY date</text>
+    <text x="247" y="208" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">schemaHints</text>
+  </g>
+  <line x1="404" y1="172" x2="416" y2="172"
+        stroke="#8B949E" stroke-width="2" stroke-linecap="round" marker-end="url(#a)"/>
+  <g class="rise" style="animation-delay:0.28s">
+    <rect x="418" y="54" width="173" height="236" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="418" y="54" width="173" height="5" rx="2.5" fill="#E58FC0"/>
+    <text x="436" y="98" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="20" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.2">silver</text>
+    <text x="436" y="130" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">1 fact table</text>
+    <text x="436" y="156" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">trip_events</text>
+    <text x="436" y="182" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">star join</text>
+    <text x="436" y="208" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">expectations</text>
+  </g>
+  <line x1="593" y1="172" x2="605" y2="172"
+        stroke="#8B949E" stroke-width="2" stroke-linecap="round" marker-end="url(#a)"/>
+  <g class="rise" style="animation-delay:0.37s">
+    <rect x="607" y="54" width="173" height="236" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="607" y="54" width="173" height="5" rx="2.5" fill="#4CC38A"/>
+    <text x="625" y="98" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="20" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.2">gold</text>
+    <text x="625" y="130" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">5 tables</text>
+    <text x="625" y="156" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">3 mat. views</text>
+    <text x="625" y="182" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">2 streaming</text>
+  </g>
+  <line x1="782" y1="172" x2="794" y2="172"
+        stroke="#8B949E" stroke-width="2" stroke-linecap="round" marker-end="url(#a)"/>
+  <g class="rise" style="animation-delay:0.46s">
+    <rect x="796" y="54" width="173" height="236" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="796" y="54" width="173" height="5" rx="2.5" fill="#FF7A5C"/>
+    <text x="814" y="98" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="20" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.2">metric views</text>
+    <text x="814" y="130" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">4 views</text>
+    <text x="814" y="156" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">trip·driver·truck</text>
+    <text x="814" y="182" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">MEASURE()</text>
+  </g>
+  <line x1="971" y1="172" x2="983" y2="172"
+        stroke="#8B949E" stroke-width="2" stroke-linecap="round" marker-end="url(#a)"/>
+  <g class="rise" style="animation-delay:0.55s">
+    <rect x="985" y="54" width="173" height="236" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="985" y="54" width="173" height="5" rx="2.5" fill="#8FD0F5"/>
+    <text x="1003" y="98" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="20" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.2">Consumers</text>
+    <text x="1003" y="130" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">Genie agent</text>
+    <text x="1003" y="156" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">AI/BI dashboard</text>
+    <text x="1003" y="182" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15.5"
+          fill="#8B949E">Ask Genie</text>
+  </g>
+  <text x="40" y="348" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="19"
+        fill="#484F58">Every metric view reads silver.trip_events — that is why the totals reconcile.</text>
+</svg>

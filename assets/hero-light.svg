@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 254"
+     width="1200" height="254" role="img" aria-label="Fleet Pulse — Trucking Operations on Databricks">
+  <style>
+    /* Entrance animations move things but never fade them. A renderer that does
+       not run CSS would otherwise show an empty banner, because the from-state
+       of a fade is invisible and fill-mode both holds it for the whole delay. */
+    .rise  { animation: rise .55s cubic-bezier(.2,.7,.3,1) both; }
+    @keyframes rise { from { transform: translateY(9px) } to { transform: translateY(0) } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+    .sweep { animation: sweep .9s cubic-bezier(.2,.7,.3,1) .15s; }
+    .blob  { animation: drift 14s ease-in-out infinite alternate; }
+    @keyframes sweep { from { width: 0 } to { width: 1120px } }
+    @keyframes drift { from { transform: translate(0,0) }
+                        to   { transform: translate(64px,-22px) } }
+  </style>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="50%">
+      <!-- Three stops: a two-stop fade keeps its outer third visible as a hard
+           circular edge on dark surfaces. Fading to zero by ~70% removes the edge. -->
+      <stop offset="0%" stop-color="#0072B2" stop-opacity="0.09"/>
+      <stop offset="55%" stop-color="#0072B2" stop-opacity="0.035"/>
+      <stop offset="100%" stop-color="#0072B2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- The panel paints the theme's own card colour rather than staying
+       transparent, so the hero reads as a deliberate surface on all four
+       GitHub backgrounds. -->
+  <rect width="1200" height="254" rx="16" fill="#F6F8FA"/>
+  <rect x="0.5" y="0.5" width="1199" height="253" rx="15.5" fill="none" stroke="#D0D7DE"/>
+  <rect width="8" height="254" rx="4" fill="#0072B2"/>
+  <g class="blob"><circle cx="1010" cy="70" r="240" fill="url(#g)"/></g>
+  <text class="rise" x="40" y="74" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="22" font-weight="700"
+        letter-spacing="3" fill="#0072B2">85,410 TRIPS  ·  58 ROUTES  ·  2022–2024</text>
+  <rect class="sweep" x="40" y="108" width="1120" height="2"
+        rx="1" fill="#D0D7DE"/>
+  <text class="rise" style="animation-delay:0.20s" x="40" y="146"
+        font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="25" fill="#656D76">A medallion lakehouse on Lakeflow Declarative Pipelines, with a governed metric-view layer, a Genie</text>
+  <text class="rise" style="animation-delay:0.25s" x="40" y="180"
+        font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="25" fill="#656D76">agent and an AI/BI dashboard on top. Every figure reconciles to the trip facts.</text>
+  <text class="rise" style="animation-delay:.25s" x="40" y="214"
+        font-family="ui-monospace,SFMono-Regular,'SF Mono',Consolas,'Liberation Mono',monospace" font-size="18" fill="#656D76">14 bronze · 1 silver · 5 gold · 4 metric views</text>
+</svg>

@@ -1,0 +1,146 @@
+{
+  "out_dir": "../assets",
+  "facts_from": "readme-facts.json",
+  "hero": {
+    "name": "hero",
+    "title": "Fleet Pulse \u2014 Trucking Operations on Databricks",
+    "eyebrow": "{trips} trips  \u00b7  {routes} routes  \u00b7  2022\u20132024",
+    "subtitle": "A medallion lakehouse on Lakeflow Declarative Pipelines, with a governed metric-view layer, a Genie agent and an AI/BI dashboard on top. Every figure reconciles to the trip facts.",
+    "note": "14 bronze \u00b7 1 silver \u00b7 5 gold \u00b7 4 metric views",
+    "accent": "primary"
+  },
+  "cards": {
+    "name": "why",
+    "label": "Why this project is worth a look",
+    "cards": [
+      {
+        "icon": "\u25c6",
+        "title": "One source of truth",
+        "body": "All four metric views read the same trip fact, so revenue, trips and MPG agree across every view and the dashboard.",
+        "stat": "{revenue} \u00b7 {trips} trips",
+        "colour": "good"
+      },
+      {
+        "icon": "\u25b2",
+        "title": "Reconciled, not assumed",
+        "body": "The dataset's own monthly aggregates disagreed with the facts by {source_revenue_delta} on revenue. Finding that was the point.",
+        "stat": "{source_revenue_delta} revenue gap found",
+        "colour": "warn"
+      },
+      {
+        "icon": "\u25cf",
+        "title": "Governed KPIs",
+        "body": "Ratios are MEASURE(a) / MEASURE(b) over atomic sums \u2014 never an average of an average, which is where MPG silently drifts.",
+        "stat": "{metric_views} metric views \u00b7 {benchmarks} benchmarks",
+        "colour": "violet"
+      }
+    ]
+  },
+  "architecture": {
+    "name": "architecture",
+    "label": "Dataflow from yearly CSVs to the Genie agent and dashboard",
+    "note": "Every metric view reads silver.trip_events \u2014 that is why the totals reconcile.",
+    "stages": [
+      {
+        "title": "30 CSVs",
+        "colour": "warn",
+        "lines": [
+          "24 fact \u00b7 6 dim",
+          "one per year",
+          "python loader"
+        ]
+      },
+      {
+        "title": "bronze",
+        "colour": "primary",
+        "lines": [
+          "14 streams",
+          "Auto Loader",
+          "CLUSTER BY date",
+          "schemaHints"
+        ]
+      },
+      {
+        "title": "silver",
+        "colour": "violet",
+        "lines": [
+          "1 fact table",
+          "trip_events",
+          "star join",
+          "expectations"
+        ]
+      },
+      {
+        "title": "gold",
+        "colour": "good",
+        "lines": [
+          "5 tables",
+          "3 mat. views",
+          "2 streaming"
+        ]
+      },
+      {
+        "title": "metric views",
+        "colour": "bad",
+        "lines": [
+          "4 views",
+          "trip\u00b7driver\u00b7truck",
+          "MEASURE()"
+        ]
+      },
+      {
+        "title": "Consumers",
+        "colour": "cyan",
+        "lines": [
+          "Genie agent",
+          "AI/BI dashboard",
+          "Ask Genie"
+        ]
+      }
+    ]
+  },
+  "captions": [
+    {
+      "name": "section-pipeline",
+      "eyebrow": "Part 1",
+      "title": "The pipeline",
+      "body": "Yearly CSV batches land in a Unity Catalog volume and become bronze streaming tables, one silver fact and five gold outputs on Lakeflow Declarative Pipelines.",
+      "accent": "primary"
+    },
+    {
+      "name": "section-optimizations",
+      "eyebrow": "Part 2",
+      "title": "Optimizations",
+      "body": "Eight pipeline choices with measured reasons \u2014 clustering, write sizing, data quality gates, and one error that proved the two clustering clauses cannot coexist.",
+      "accent": "cyan"
+    },
+    {
+      "name": "section-semantic",
+      "eyebrow": "Part 3",
+      "title": "The semantic layer",
+      "body": "Four governed metric views own the KPI definitions. Ratios compose from atomic measures, so they re-aggregate correctly at any dimension.",
+      "accent": "violet"
+    },
+    {
+      "name": "section-genie",
+      "eyebrow": "Part 4",
+      "title": "The Genie agent",
+      "body": "Natural language over the same governed measures, held to account by seven benchmarks with checked SQL ground truth.",
+      "accent": "good"
+    },
+    {
+      "name": "section-dashboard",
+      "eyebrow": "Part 5",
+      "title": "The dashboard",
+      "body": "Four KPIs, two trends, two rankings and two tables \u2014 with the agent reachable from an Ask Genie button.",
+      "accent": "warn"
+    },
+    {
+      "name": "section-run",
+      "eyebrow": "Part 6",
+      "title": "Run it yourself",
+      "body": "Regenerate the data, deploy the bundle, recreate the views and open the report. Roughly fifteen minutes on a fresh workspace.",
+      "accent": "bad"
+    }
+  ]
+}
