@@ -7,8 +7,8 @@
 
   <g class="rise" style="animation-delay:0.15s">
     <rect x="0" y="0" width="386" height="369" rx="14" fill="#F6F8FA" stroke="#D0D7DE"/>
-    <rect x="0" y="0" width="386" height="5" rx="2.5" fill="#009E73"/>
-    <circle cx="52" cy="64" r="28" fill="#009E73" fill-opacity="0.14"/>
+    <rect x="0" y="0" width="386" height="5" rx="2.5" fill="#059669"/>
+    <circle cx="52" cy="64" r="28" fill="#059669" fill-opacity="0.14"/>
     <text x="52" y="75" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
           font-size="29">◆</text>
     <text x="28" y="124" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="700"
@@ -23,12 +23,12 @@
           fill="#656D76">every view and the dashboard.</text>
     <rect x="28" y="314" width="330" height="1" fill="#D0D7DE"/>
     <text x="28" y="337" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="19.5" font-weight="700"
-          fill="#009E73" letter-spacing="0.3">$298.6M · 85,410 trips</text>
+          fill="#059669" letter-spacing="0.3">$298.6M · 85,410 trips</text>
   </g>
   <g class="rise" style="animation-delay:0.27s">
     <rect x="406" y="0" width="386" height="369" rx="14" fill="#F6F8FA" stroke="#D0D7DE"/>
-    <rect x="406" y="0" width="386" height="5" rx="2.5" fill="#E69F00"/>
-    <circle cx="458" cy="64" r="28" fill="#E69F00" fill-opacity="0.14"/>
+    <rect x="406" y="0" width="386" height="5" rx="2.5" fill="#D97706"/>
+    <circle cx="458" cy="64" r="28" fill="#D97706" fill-opacity="0.14"/>
     <text x="458" y="75" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
           font-size="29">▲</text>
     <text x="434" y="124" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="700"
@@ -43,12 +43,12 @@
           fill="#656D76">Finding that was the point.</text>
     <rect x="434" y="314" width="330" height="1" fill="#D0D7DE"/>
     <text x="434" y="337" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="19.5" font-weight="700"
-          fill="#E69F00" letter-spacing="0.3">13.8% revenue gap found</text>
+          fill="#D97706" letter-spacing="0.3">13.8% revenue gap found</text>
   </g>
   <g class="rise" style="animation-delay:0.39s">
     <rect x="812" y="0" width="386" height="369" rx="14" fill="#F6F8FA" stroke="#D0D7DE"/>
-    <rect x="812" y="0" width="386" height="5" rx="2.5" fill="#CC79A7"/>
-    <circle cx="864" cy="64" r="28" fill="#CC79A7" fill-opacity="0.14"/>
+    <rect x="812" y="0" width="386" height="5" rx="2.5" fill="#7C3AED"/>
+    <circle cx="864" cy="64" r="28" fill="#7C3AED" fill-opacity="0.14"/>
     <text x="864" y="75" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
           font-size="29">●</text>
     <text x="840" y="124" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="700"
@@ -65,6 +65,6 @@
           fill="#656D76">silently drifts.</text>
     <rect x="840" y="314" width="330" height="1" fill="#D0D7DE"/>
     <text x="840" y="337" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="19.5" font-weight="700"
-          fill="#CC79A7" letter-spacing="0.3">4 metric views · 7 benchmarks</text>
+          fill="#7C3AED" letter-spacing="0.3">4 metric views · 7 benchmarks</text>
   </g>
 </svg>

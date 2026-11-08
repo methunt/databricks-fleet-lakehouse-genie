@@ -46,16 +46,16 @@ LIGHT = {
     "name": "light",
     "bg": "#FFFFFF", "card": "#F6F8FA", "card2": "#EEF1F5", "border": "#D0D7DE",
     "text": "#1F2328", "muted": "#656D76", "faint": "#8C959F",
-    "primary": "#0072B2", "good": "#009E73", "warn": "#E69F00",
-    "bad": "#D55E00", "violet": "#CC79A7", "cyan": "#56B4E9",
-    "glowopacity": "0.09", "glowhalf": "0.035", "ctashadow": "0.34", "wash": "0.10",
+    "primary": "#2563EB", "good": "#059669", "warn": "#D97706",
+    "bad": "#DC2626", "violet": "#7C3AED", "cyan": "#0891B2",
+    "glowopacity": "0.07", "glowhalf": "0.03", "ctashadow": "0.34", "wash": "0.10",
 }
 DARK = {
     "name": "dark",
     "bg": "#0D1117", "card": "#161B22", "card2": "#1C2128", "border": "#30363D",
     "text": "#E6EDF3", "muted": "#8B949E", "faint": "#484F58",
-    "primary": "#56B4E9", "good": "#4CC38A", "warn": "#F0B429",
-    "bad": "#FF7A5C", "violet": "#E58FC0", "cyan": "#8FD0F5",
+    "primary": "#3B82F6", "good": "#10B981", "warn": "#F59E0B",
+    "bad": "#EF4444", "violet": "#8B5CF6", "cyan": "#22D3EE",
     "glowopacity": "0.16", "glowhalf": "0.06", "ctashadow": "0.55", "wash": "0.22",
 }
 
@@ -414,8 +414,84 @@ def architecture(spec: dict, facts: dict) -> str:
 """
 
 
+# --------------------------------------------------------------------------- #
+# Lineage - one graph, volume to consumers, edges are the real reads
+# --------------------------------------------------------------------------- #
+
+def lineage(spec: dict, facts: dict) -> str:
+    """Left-to-right lineage. Column widths come from the longest label, and
+    every edge endpoint is checked against the node ids so a renamed table
+    fails the build instead of drawing a dangling line."""
+    FS, pad, gap, margin, step = 15, 14, 52, 30, 44
+    cols, nodes = spec["columns"], {}
+    x = margin
+    top = 96
+    H = max(len(c["nodes"]) for c in cols) * step
+    for c in cols:
+        c["w"] = int(max(len(n["label"]) for n in c["nodes"]) * 0.6 * FS + 2 * pad)
+        c["x"] = x
+        x += c["w"] + gap
+        k = len(c["nodes"])
+        for i, n in enumerate(c["nodes"]):
+            n.update(col=c, cy=top + (i + 0.5) * H / k)
+            nodes[n["id"]] = n
+    W = x - gap + margin
+    height = top + H + 24
+
+    edges = []
+    for src, dst in spec["edges"]:
+        if src not in nodes or dst not in nodes:
+            sys.exit(f"error: lineage edge {src!r} -> {dst!r} names an unknown node")
+        a, b = nodes[src], nodes[dst]
+        x1, x2 = a["col"]["x"] + a["col"]["w"], b["col"]["x"]
+        mx = (x2 - x1) / 2
+        edges.append(f'''
+  <path d="M {x1} {a['cy']:.1f} C {x1 + mx:.1f} {a['cy']:.1f} {x2 - mx:.1f} {b['cy']:.1f} {x2 - 3} {b['cy']:.1f}"
+        fill="none" stroke="{accent(a['col'].get('colour', 'primary'), 'column')}" stroke-opacity="0.8"
+        stroke-width="1.8" stroke-dasharray="6 5" stroke-linecap="round" class="flow"
+        marker-end="url(#a)"/>''')
+
+    body = []
+    for c in cols:
+        col = accent(c.get("colour", "primary"), c["title"])
+        body.append(f'''
+  <text x="{c['x']}" y="40" font-family="__FONT__" font-size="19" font-weight="700" fill="__TEXT__">{esc(c['title'])}</text>
+  <text x="{c['x']}" y="62" font-family="__FONT__" font-size="14" fill="{col}">{esc(c['sub'])}</text>''')
+        for n in c["nodes"]:
+            dim = n.get("dim", False)
+            y = n["cy"] - 17
+            body.append(f'''
+  <rect x="{c['x']}" y="{y:.1f}" width="{c['w']}" height="34" rx="8" fill="__CARD__" stroke="__BORDER__"
+        {'stroke-dasharray="5 4"' if dim else ''}/>
+  <rect x="{c['x']}" y="{y:.1f}" width="4" height="34" rx="2" fill="{'__FAINT__' if dim else col}"/>
+  <text x="{c['x'] + pad}" y="{n['cy'] + 5:.1f}" font-family="__MONO__" font-size="{FS}"
+        fill="{'__MUTED__' if dim else '__TEXT__'}">{esc(n['label'])}</text>''')
+
+    note = spec.get("note", "")
+    note_svg = f'''
+  <text x="{margin}" y="{height - 4}" font-family="__FONT__" font-size="14" fill="__FAINT__">{esc(note)}</text>''' if note else ""
+    height += 18 if note else 0
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {height}"
+     width="{W}" height="{height}" role="img" aria-label="{esc_attr(spec['label'])}">
+  <style>
+    /* Dashes travel along each path, and every path is drawn source to
+       target, so the motion always reads left to right. Reduced-motion users
+       get static dashes. */
+    .flow {{ animation: flow 1.1s linear infinite; }}
+    @keyframes flow {{ to {{ stroke-dashoffset: -11 }} }}
+    @media (prefers-reduced-motion: reduce) {{ .flow {{ animation: none }} }}
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="__MUTED__"/>
+    </marker>
+  </defs>{''.join(edges)}{''.join(body)}{note_svg}
+</svg>
+"""
+
+
 BUILDERS = {"hero": hero, "caption": caption, "cards": cards, "cta": cta,
-            "architecture": architecture}
+            "architecture": architecture, "lineage": lineage}
 
 
 def main() -> None:
@@ -432,7 +508,7 @@ def main() -> None:
 
     headings: list[str] = []
     count = 0
-    for kind in ("hero", "architecture", "cards", "cta", "captions"):
+    for kind in ("hero", "architecture", "lineage", "cards", "cta", "captions"):
         entries = spec.get("captions", []) if kind == "captions" else ([spec[kind]] if kind in spec else [])
         for entry in entries:
             builder = BUILDERS["caption" if kind == "captions" else kind]

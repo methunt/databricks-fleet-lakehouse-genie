@@ -68,16 +68,22 @@ workspace, and every figure below is a checked query, not a screenshot.
 
 ## 🔌 How it is wired
 
+<a href="assets/lineage-light.svg">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/architecture-dark.svg">
-  <img alt="Dataflow from yearly CSVs through bronze, silver, gold and metric views to the Genie agent and dashboard" src="assets/architecture-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/lineage-dark.svg">
+  <img alt="Lineage from the volume through bronze, silver, gold and metric views to the Genie agent and dashboard" src="assets/lineage-light.svg">
 </picture>
+</a>
 
-30 yearly CSVs (12.5 MB of fact files) land in a Unity Catalog volume, Auto
-Loader builds **14 bronze streaming tables**, silver joins them into one trip
-fact, and gold materializes **5 tables**. Four **metric views** then own the KPI
-definitions and serve both the Genie agent and the dashboard — one semantic
-layer, two consumers.
+<sub>Click the graph to open it full size and zoom.</sub>
+
+30 yearly CSVs (58 MB) land in a Unity Catalog volume, Auto Loader builds **14
+bronze streaming tables**, silver joins seven of them into one trip fact, and
+gold materializes **5 tables**. Four **metric views** own the KPI definitions
+and serve both the Genie agent and the dashboard — one semantic layer, two
+consumers. Dashed tables are loaded but nothing downstream reads them yet, and
+the gold tables are not read by the metric views, which go to silver and bronze
+directly.
 
 ---
 

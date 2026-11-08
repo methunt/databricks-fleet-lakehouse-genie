@@ -3,10 +3,10 @@
   "facts_from": "readme-facts.json",
   "hero": {
     "name": "hero",
-    "title": "Fleet Pulse \u2014 Trucking Operations on Databricks",
-    "eyebrow": "{trips} trips  \u00b7  {routes} routes  \u00b7  2022\u20132024",
+    "title": "Fleet Pulse — Trucking Operations on Databricks",
+    "eyebrow": "{trips} trips  ·  {routes} routes  ·  2022–2024",
     "subtitle": "A medallion lakehouse on Lakeflow Declarative Pipelines, with a governed metric-view layer, a Genie agent and an AI/BI dashboard on top. Every figure reconciles to the trip facts.",
-    "note": "14 bronze \u00b7 1 silver \u00b7 5 gold \u00b7 4 metric views",
+    "note": "14 bronze · 1 silver · 5 gold · 4 metric views",
     "accent": "primary"
   },
   "cards": {
@@ -14,88 +14,25 @@
     "label": "Why this project is worth a look",
     "cards": [
       {
-        "icon": "\u25c6",
+        "icon": "◆",
         "title": "One source of truth",
         "body": "All four metric views read the same trip fact, so revenue, trips and MPG agree across every view and the dashboard.",
-        "stat": "{revenue} \u00b7 {trips} trips",
+        "stat": "{revenue} · {trips} trips",
         "colour": "good"
       },
       {
-        "icon": "\u25b2",
+        "icon": "▲",
         "title": "Reconciled, not assumed",
         "body": "The dataset's own monthly aggregates disagreed with the facts by {source_revenue_delta} on revenue. Finding that was the point.",
         "stat": "{source_revenue_delta} revenue gap found",
         "colour": "warn"
       },
       {
-        "icon": "\u25cf",
+        "icon": "●",
         "title": "Governed KPIs",
-        "body": "Ratios are MEASURE(a) / MEASURE(b) over atomic sums \u2014 never an average of an average, which is where MPG silently drifts.",
-        "stat": "{metric_views} metric views \u00b7 {benchmarks} benchmarks",
+        "body": "Ratios are MEASURE(a) / MEASURE(b) over atomic sums — never an average of an average, which is where MPG silently drifts.",
+        "stat": "{metric_views} metric views · {benchmarks} benchmarks",
         "colour": "violet"
-      }
-    ]
-  },
-  "architecture": {
-    "name": "architecture",
-    "label": "Dataflow from yearly CSVs to the Genie agent and dashboard",
-    "note": "Every metric view reads silver.trip_events \u2014 that is why the totals reconcile.",
-    "stages": [
-      {
-        "title": "30 CSVs",
-        "colour": "warn",
-        "lines": [
-          "24 fact \u00b7 6 dim",
-          "one per year",
-          "python loader"
-        ]
-      },
-      {
-        "title": "bronze",
-        "colour": "primary",
-        "lines": [
-          "14 streams",
-          "Auto Loader",
-          "CLUSTER BY date",
-          "schemaHints"
-        ]
-      },
-      {
-        "title": "silver",
-        "colour": "violet",
-        "lines": [
-          "1 fact table",
-          "trip_events",
-          "star join",
-          "expectations"
-        ]
-      },
-      {
-        "title": "gold",
-        "colour": "good",
-        "lines": [
-          "5 tables",
-          "3 mat. views",
-          "2 streaming"
-        ]
-      },
-      {
-        "title": "metric views",
-        "colour": "bad",
-        "lines": [
-          "4 views",
-          "trip\u00b7driver\u00b7truck",
-          "MEASURE()"
-        ]
-      },
-      {
-        "title": "Consumers",
-        "colour": "cyan",
-        "lines": [
-          "Genie agent",
-          "AI/BI dashboard",
-          "Ask Genie"
-        ]
       }
     ]
   },
@@ -111,7 +48,7 @@
       "name": "section-optimizations",
       "eyebrow": "Part 2",
       "title": "Optimizations",
-      "body": "Eight pipeline choices with measured reasons \u2014 clustering, write sizing, data quality gates, and one error that proved the two clustering clauses cannot coexist.",
+      "body": "Eight pipeline choices with measured reasons — clustering, write sizing, data quality gates, and one error that proved the two clustering clauses cannot coexist.",
       "accent": "cyan"
     },
     {
@@ -132,7 +69,7 @@
       "name": "section-dashboard",
       "eyebrow": "Part 5",
       "title": "The dashboard",
-      "body": "Four KPIs, two trends, two rankings and two tables \u2014 with the agent reachable from an Ask Genie button.",
+      "body": "Four KPIs, two trends, two rankings and two tables — with the agent reachable from an Ask Genie button.",
       "accent": "warn"
     },
     {
@@ -142,5 +79,344 @@
       "body": "Regenerate the data, deploy the bundle, recreate the views and open the report. Roughly fifteen minutes on a fresh workspace.",
       "accent": "bad"
     }
-  ]
+  ],
+  "lineage": {
+    "name": "lineage",
+    "label": "Lineage from the volume through bronze, silver, gold and metric views to the Genie agent and dashboard",
+    "note": "Dashed = loaded but read by nothing. Gold has no consumers: the metric views read silver and bronze directly.",
+    "columns": [
+      {
+        "title": "Volume",
+        "sub": "30 CSVs · 58 MB",
+        "colour": "warn",
+        "nodes": [
+          {
+            "id": "vol",
+            "label": "raw_events"
+          }
+        ]
+      },
+      {
+        "title": "Bronze",
+        "sub": "14 streaming tables",
+        "colour": "primary",
+        "nodes": [
+          {
+            "id": "b_loads",
+            "label": "loads"
+          },
+          {
+            "id": "b_trips",
+            "label": "trips"
+          },
+          {
+            "id": "b_delivery_events",
+            "label": "delivery_events"
+          },
+          {
+            "id": "b_customers",
+            "label": "customers"
+          },
+          {
+            "id": "b_routes",
+            "label": "routes"
+          },
+          {
+            "id": "b_drivers",
+            "label": "drivers"
+          },
+          {
+            "id": "b_trucks",
+            "label": "trucks"
+          },
+          {
+            "id": "b_driver_monthly_metrics",
+            "label": "driver_monthly_metrics"
+          },
+          {
+            "id": "b_safety_incidents",
+            "label": "safety_incidents"
+          },
+          {
+            "id": "b_truck_utilization_metrics",
+            "label": "truck_utilization_metrics"
+          },
+          {
+            "id": "b_maintenance_records",
+            "label": "maintenance_records"
+          },
+          {
+            "id": "b_fuel_purchases",
+            "label": "fuel_purchases",
+            "dim": true
+          },
+          {
+            "id": "b_trailers",
+            "label": "trailers",
+            "dim": true
+          },
+          {
+            "id": "b_facilities",
+            "label": "facilities",
+            "dim": true
+          }
+        ]
+      },
+      {
+        "title": "Silver",
+        "sub": "1 streaming table",
+        "colour": "violet",
+        "nodes": [
+          {
+            "id": "silver",
+            "label": "trip_events"
+          }
+        ]
+      },
+      {
+        "title": "Gold",
+        "sub": "5 tables, no readers",
+        "colour": "good",
+        "nodes": [
+          {
+            "id": "g_on_time",
+            "label": "on_time_delivery",
+            "dim": true
+          },
+          {
+            "id": "g_route",
+            "label": "route_profitability",
+            "dim": true
+          },
+          {
+            "id": "g_fuel",
+            "label": "fuel_efficiency_trend",
+            "dim": true
+          },
+          {
+            "id": "g_fleet",
+            "label": "fleet_utilization",
+            "dim": true
+          },
+          {
+            "id": "g_driver",
+            "label": "driver_scorecard",
+            "dim": true
+          }
+        ]
+      },
+      {
+        "title": "Metric views",
+        "sub": "4 views",
+        "colour": "bad",
+        "nodes": [
+          {
+            "id": "m_trip",
+            "label": "trip_metrics"
+          },
+          {
+            "id": "m_driver",
+            "label": "driver_metrics"
+          },
+          {
+            "id": "m_truck",
+            "label": "truck_metrics"
+          },
+          {
+            "id": "m_maint",
+            "label": "truck_maintenance_metrics"
+          }
+        ]
+      },
+      {
+        "title": "Consumers",
+        "sub": "one semantic layer",
+        "colour": "cyan",
+        "nodes": [
+          {
+            "id": "genie",
+            "label": "Genie agent"
+          },
+          {
+            "id": "dash",
+            "label": "AI/BI dashboard"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "vol",
+        "b_loads"
+      ],
+      [
+        "vol",
+        "b_trips"
+      ],
+      [
+        "vol",
+        "b_delivery_events"
+      ],
+      [
+        "vol",
+        "b_fuel_purchases"
+      ],
+      [
+        "vol",
+        "b_maintenance_records"
+      ],
+      [
+        "vol",
+        "b_safety_incidents"
+      ],
+      [
+        "vol",
+        "b_driver_monthly_metrics"
+      ],
+      [
+        "vol",
+        "b_truck_utilization_metrics"
+      ],
+      [
+        "vol",
+        "b_customers"
+      ],
+      [
+        "vol",
+        "b_drivers"
+      ],
+      [
+        "vol",
+        "b_trucks"
+      ],
+      [
+        "vol",
+        "b_trailers"
+      ],
+      [
+        "vol",
+        "b_routes"
+      ],
+      [
+        "vol",
+        "b_facilities"
+      ],
+      [
+        "b_loads",
+        "silver"
+      ],
+      [
+        "b_trips",
+        "silver"
+      ],
+      [
+        "b_delivery_events",
+        "silver"
+      ],
+      [
+        "b_customers",
+        "silver"
+      ],
+      [
+        "b_routes",
+        "silver"
+      ],
+      [
+        "b_drivers",
+        "silver"
+      ],
+      [
+        "b_trucks",
+        "silver"
+      ],
+      [
+        "silver",
+        "g_on_time"
+      ],
+      [
+        "silver",
+        "g_route"
+      ],
+      [
+        "silver",
+        "g_fuel"
+      ],
+      [
+        "b_truck_utilization_metrics",
+        "g_fleet"
+      ],
+      [
+        "b_trucks",
+        "g_fleet"
+      ],
+      [
+        "b_driver_monthly_metrics",
+        "g_driver"
+      ],
+      [
+        "b_safety_incidents",
+        "g_driver"
+      ],
+      [
+        "b_drivers",
+        "g_driver"
+      ],
+      [
+        "silver",
+        "m_trip"
+      ],
+      [
+        "silver",
+        "m_driver"
+      ],
+      [
+        "b_drivers",
+        "m_driver"
+      ],
+      [
+        "silver",
+        "m_truck"
+      ],
+      [
+        "b_trucks",
+        "m_truck"
+      ],
+      [
+        "b_maintenance_records",
+        "m_maint"
+      ],
+      [
+        "b_trucks",
+        "m_maint"
+      ],
+      [
+        "m_trip",
+        "genie"
+      ],
+      [
+        "m_driver",
+        "genie"
+      ],
+      [
+        "m_truck",
+        "genie"
+      ],
+      [
+        "m_maint",
+        "genie"
+      ],
+      [
+        "m_trip",
+        "dash"
+      ],
+      [
+        "m_driver",
+        "dash"
+      ],
+      [
+        "m_maint",
+        "dash"
+      ]
+    ]
+  }
 }
