@@ -211,6 +211,17 @@ YAML, not duplicated in the space).
 | Benchmarks | 7 — six with checked SQL, one Agent-mode with a grading note |
 | `join_specs` / `column_configs` | 0 / 0 — by design |
 
+### What it looks like
+
+Three questions from the space, asked in plain English. Genie picks the chart
+itself and cites the metric view it read.
+
+<img alt="Genie answers 'Who are the top 5 drivers by revenue generated?' with a ranked table" src="assets/genie-top-drivers.png" width="720">
+
+<img alt="Genie answers 'Which customers have the worst on-time delivery rate?' with a bar chart; the worst is Pacific Manufacturing at 26.8%" src="assets/genie-worst-customers.png" width="720">
+
+<img alt="Genie answers 'Which routes are most profitable by revenue per mile?' with a bar chart; Philadelphia to New York leads at $3.62" src="assets/genie-top-routes.png" width="720">
+
 ### The join-grain trap
 
 Genie's first attempt at *"which trucks cost the most in maintenance relative to
@@ -240,6 +251,8 @@ dropped half the revenue and doubled every ratio.
 
 <img alt="KPIs, trends, rankings, tables — with the agent embedded." src="assets/section-dashboard-light.svg">
 
+<img alt="The published Fleet Pulse dashboard: four KPIs, monthly revenue and fuel-efficiency trends, and route and customer rankings" src="assets/dashboard.png">
+
 One canvas page, 12 widgets, Okabe-Ito palette (colour-blind safe), light and
 dark theme pairs. Datasets read the **metric views** with bare table names,
 resolved by `--dataset-catalog fleet_pulse --dataset-schema gold`.
@@ -262,20 +275,6 @@ resolved by `--dataset-catalog fleet_pulse --dataset-schema gold`.
 > `SELECT ... FROM trip_metrics GROUP BY ALL` queries — so a click on a bar
 > filters only that dataset, and the Authenticity guarantee is that the dashboard
 > and a hand-written query can never disagree.
-
-<details>
-<summary><b>Capture these three screenshots for docs/</b> (the browser requires SSO, so they aren't in the repo)</summary>
-
-1. The dashboard, published, from Dashboards in the workspace sidebar
-2. A Genie conversation showing the generated `MEASURE()` SQL
-3. The Lakeflow pipeline graph from the Jobs & Pipelines UI
-
-```markdown
-![Dashboard overview](docs/dashboard.png)
-![Genie conversation](docs/genie.png)
-![Pipeline DAG](docs/pipeline-dag.png)
-```
-</details>
 
 ---
 

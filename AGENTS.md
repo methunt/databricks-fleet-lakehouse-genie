@@ -137,6 +137,4 @@ space ID before `lakeview create` or `update`; `lakeview update` must also re-pa
 ## State
 
 Complete and verified in the workspace it was built in. The pipeline, four metric views, Genie space and dashboard
-are all deployed there. Known open items: the two orphan gold tables above; `docs/` is empty and still needs
-three screenshots (dashboard, a Genie answer showing `MEASURE()` SQL, the pipeline graph); the seven Genie
-benchmarks exist but have not been run through the native evaluation.
+are all deployed there.
