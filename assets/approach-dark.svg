@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 369"
+     width="1200" height="369" role="img" aria-label="Why this approach: human architect, agent builder, checks as the contract">
+  <style>
+    .rise  { animation: rise .55s cubic-bezier(.2,.7,.3,1) both; }
+    @keyframes rise { from { transform: translateY(9px) } to { transform: translateY(0) } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important } }</style>
+
+  <g class="rise" style="animation-delay:0.15s">
+    <rect x="0" y="0" width="386" height="369" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="0" y="0" width="386" height="5" rx="2.5" fill="#10B981"/>
+    <circle cx="52" cy="64" r="28" fill="#10B981" fill-opacity="0.14"/>
+    <text x="52" y="75" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+          font-size="29">◆</text>
+    <text x="28" y="124" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.4">Human owns the decisions</text>
+    <text x="28" y="158" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">Architecture, the rules each</text>
+    <text x="28" y="189" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">layer obeys and the numbers</text>
+    <text x="28" y="220" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">the result must hit were</text>
+    <text x="28" y="251" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">written down before the agent</text>
+    <text x="28" y="282" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">built anything.</text>
+    <rect x="28" y="314" width="330" height="1" fill="#30363D"/>
+    <text x="28" y="337" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="19.5" font-weight="700"
+          fill="#10B981" letter-spacing="0.3">6 layers · 1 rulebook</text>
+  </g>
+  <g class="rise" style="animation-delay:0.27s">
+    <rect x="406" y="0" width="386" height="369" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="406" y="0" width="386" height="5" rx="2.5" fill="#8B5CF6"/>
+    <circle cx="458" cy="64" r="28" fill="#8B5CF6" fill-opacity="0.14"/>
+    <text x="458" y="75" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+          font-size="29">▲</text>
+    <text x="434" y="124" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.4">Agent owns the execution</text>
+    <text x="434" y="158" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">Pipeline SQL, metric-view</text>
+    <text x="434" y="189" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">YAML, the Genie space, the</text>
+    <text x="434" y="220" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">dashboard JSON and the</text>
+    <text x="434" y="251" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">acceptance checks were all</text>
+    <text x="434" y="282" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">written by the agent.</text>
+    <rect x="434" y="314" width="330" height="1" fill="#30363D"/>
+    <text x="434" y="337" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="19.5" font-weight="700"
+          fill="#8B5CF6" letter-spacing="0.3">4 metric views · 5 gold</text>
+  </g>
+  <g class="rise" style="animation-delay:0.39s">
+    <rect x="812" y="0" width="386" height="369" rx="14" fill="#161B22" stroke="#30363D"/>
+    <rect x="812" y="0" width="386" height="5" rx="2.5" fill="#F59E0B"/>
+    <circle cx="864" cy="64" r="28" fill="#F59E0B" fill-opacity="0.14"/>
+    <text x="864" y="75" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+          font-size="29">●</text>
+    <text x="840" y="124" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="700"
+          fill="#E6EDF3" letter-spacing="-0.4">Checks are the contract</text>
+    <text x="840" y="158" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">Expected values live in the</text>
+    <text x="840" y="189" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">spec, not in the agent's</text>
+    <text x="840" y="220" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">output. Live queries hold the</text>
+    <text x="840" y="251" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">workspace to them after every</text>
+    <text x="840" y="282" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21"
+          fill="#8B949E">run.</text>
+    <rect x="840" y="314" width="330" height="1" fill="#30363D"/>
+    <text x="840" y="337" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="19.5" font-weight="700"
+          fill="#F59E0B" letter-spacing="0.3">7 live checks · 7 Genie benchmarks</text>
+  </g>
+</svg>

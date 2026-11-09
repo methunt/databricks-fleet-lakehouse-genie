@@ -24,10 +24,13 @@ Those were removed on purpose and must not be re-added (see "Identifiers").
 | `genie/update_payload.json` | A wrapper (`{"serialized_space": "<string>"}`) generated from the file above for `genie update-space`. Derived; regenerate rather than hand-edit. |
 | `dashboards/fleet_pulse_dashboard.json` | AI/BI dashboard definition. `uiSettings.genieSpace.overrideId` is the placeholder `<GENIE_SPACE_ID>`. |
 | `loader/build_annual_csvs.py` | Splits the Kaggle CSVs into 30 yearly files (24 fact, 6 dimension). Output is byte-identical on re-run. |
-| `scripts/build_assets.py` | Generates the README's SVGs from `scripts/readme-assets.json` + `scripts/readme-facts.json` (light + dark). Output: `assets/`. |
+| `scripts/build_assets.py` | Generates the SVGs used by `DETAILS.md` from `scripts/readme-assets.json` + `scripts/readme-facts.json` (light + dark). Output: `assets/`. |
 | `scripts/build_showcase.py` | Generates `showcase.html` from `scripts/showcase.template.html` + `scripts/showcase-data.json`. `--refresh` re-queries the warehouse. |
 | `showcase.html` | Generated single-file summary page. Edit the template, not this file. |
 | `pyproject.toml` | Written by the Databricks VS Code extension (`databricks-connect`). Nothing in the repo imports it. |
+| `README.md` | Front page: AI-driven build, human as architect (roles, per-layer rules, spec, where the human mattered). Hand-written. |
+| `DETAILS.md` | The technical write-up (former README): pipeline, optimizations, semantic layer, Genie, dashboard, run steps. |
+| `tests/test_acceptance.py` | Live acceptance checks encoding the "Verified numbers" table. `DATABRICKS_CONFIG_PROFILE=<profile> python tests/test_acceptance.py`. |
 
 Local only, git-ignored, **may not exist** in a fresh clone: `plan.md`, `status.md`, `.databricks/`, `annual_csvs/`
 (58 MB, regenerate with the loader), `.venv/`.

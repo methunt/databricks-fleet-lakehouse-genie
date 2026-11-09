@@ -509,7 +509,8 @@ def main() -> None:
     headings: list[str] = []
     count = 0
     for kind in ("hero", "architecture", "lineage", "cards", "cta", "captions"):
-        entries = spec.get("captions", []) if kind == "captions" else ([spec[kind]] if kind in spec else [])
+        v = spec.get(kind, [])
+        entries = v if isinstance(v, list) else [v]
         for entry in entries:
             builder = BUILDERS["caption" if kind == "captions" else kind]
             # Captions are light-only by convention: they sit under a real

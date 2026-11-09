@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 254"
-     width="1200" height="254" role="img" aria-label="Fleet Pulse — Trucking Operations on Databricks">
+     width="1200" height="254" role="img" aria-label="Fleet Pulse — AI-driven data engineering, human as architect">
   <style>
     /* Entrance animations move things but never fade them. A renderer that does
        not run CSS would otherwise show an empty banner, because the from-state
@@ -30,13 +30,13 @@
   <rect width="8" height="254" rx="4" fill="#3B82F6"/>
   <g class="blob"><circle cx="1010" cy="70" r="240" fill="url(#g)"/></g>
   <text class="rise" x="40" y="74" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="22" font-weight="700"
-        letter-spacing="3" fill="#3B82F6">85,410 TRIPS  ·  58 ROUTES  ·  2022–2024</text>
+        letter-spacing="3" fill="#3B82F6">HUMAN ARCHITECTS  ·  AGENT BUILDS  ·  CHECKS PROVE IT</text>
   <rect class="sweep" x="40" y="108" width="1120" height="2"
         rx="1" fill="#30363D"/>
   <text class="rise" style="animation-delay:0.20s" x="40" y="146"
-        font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="25" fill="#8B949E">A medallion lakehouse on Lakeflow Declarative Pipelines, with a governed metric-view layer, a Genie</text>
+        font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="25" fill="#8B949E">I set the architecture, the rules each layer obeys and the numbers the result must hit. An AI agent</text>
   <text class="rise" style="animation-delay:0.25s" x="40" y="180"
-        font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="25" fill="#8B949E">agent and an AI/BI dashboard on top. Every figure reconciles to the trip facts.</text>
+        font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="25" fill="#8B949E">built the pipeline, metric views, Genie agent, dashboard and acceptance checks end to end.</text>
   <text class="rise" style="animation-delay:.25s" x="40" y="214"
-        font-family="ui-monospace,SFMono-Regular,'SF Mono',Consolas,'Liberation Mono',monospace" font-size="18" fill="#8B949E">14 bronze · 1 silver · 5 gold · 4 metric views</text>
+        font-family="ui-monospace,SFMono-Regular,'SF Mono',Consolas,'Liberation Mono',monospace" font-size="18" fill="#8B949E">85,410 trips  ·  14 bronze · 1 silver · 5 gold · 4 metric views  ·  7 live checks</text>
 </svg>

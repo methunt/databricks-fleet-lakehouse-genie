@@ -3,13 +3,13 @@
   "facts_from": "readme-facts.json",
   "hero": {
     "name": "hero",
-    "title": "Fleet Pulse — Trucking Operations on Databricks",
-    "eyebrow": "{trips} trips  ·  {routes} routes  ·  2022–2024",
-    "subtitle": "A medallion lakehouse on Lakeflow Declarative Pipelines, with a governed metric-view layer, a Genie agent and an AI/BI dashboard on top. Every figure reconciles to the trip facts.",
-    "note": "14 bronze · 1 silver · 5 gold · 4 metric views",
+    "title": "Fleet Pulse — AI-driven data engineering, human as architect",
+    "eyebrow": "Human architects  ·  Agent builds  ·  Checks prove it",
+    "subtitle": "I set the architecture, the rules each layer obeys and the numbers the result must hit. An AI agent built the pipeline, metric views, Genie agent, dashboard and acceptance checks end to end.",
+    "note": "{trips} trips  ·  14 bronze · 1 silver · 5 gold · 4 metric views  ·  7 live checks",
     "accent": "primary"
   },
-  "cards": {
+  "cards": [{
     "name": "why",
     "label": "Why this project is worth a look",
     "cards": [
@@ -35,7 +35,33 @@
         "colour": "violet"
       }
     ]
-  },
+  }, {
+    "name": "approach",
+    "label": "Why this approach: human architect, agent builder, checks as the contract",
+    "cards": [
+      {
+        "icon": "◆",
+        "title": "Human owns the decisions",
+        "body": "Architecture, the rules each layer obeys and the numbers the result must hit were written down before the agent built anything.",
+        "stat": "6 layers · 1 rulebook",
+        "colour": "good"
+      },
+      {
+        "icon": "▲",
+        "title": "Agent owns the execution",
+        "body": "Pipeline SQL, metric-view YAML, the Genie space, the dashboard JSON and the acceptance checks were all written by the agent.",
+        "stat": "{metric_views} metric views · {gold_tables} gold",
+        "colour": "violet"
+      },
+      {
+        "icon": "●",
+        "title": "Checks are the contract",
+        "body": "Expected values live in the spec, not in the agent's output. Live queries hold the workspace to them after every run.",
+        "stat": "7 live checks · {benchmarks} Genie benchmarks",
+        "colour": "warn"
+      }
+    ]
+  }],
   "captions": [
     {
       "name": "section-pipeline",
@@ -77,6 +103,48 @@
       "eyebrow": "Part 6",
       "title": "Run it yourself",
       "body": "Regenerate the data, deploy the bundle, recreate the views and open the report. Roughly fifteen minutes on a fresh workspace.",
+      "accent": "bad"
+    },
+    {
+      "name": "ai-section-model",
+      "eyebrow": "Step 1",
+      "title": "The operating model",
+      "body": "Who decides, who builds and who verifies, and why the human keeps ownership of the outcome.",
+      "accent": "primary"
+    },
+    {
+      "name": "ai-section-layers",
+      "eyebrow": "Step 2",
+      "title": "Layer rules",
+      "body": "What logic each layer may and may not carry. The architecture is the human's; the agent implements inside it.",
+      "accent": "cyan"
+    },
+    {
+      "name": "ai-section-spec",
+      "eyebrow": "Step 3",
+      "title": "The spec",
+      "body": "The numbers the result must hit, written down first and executed as live checks against the workspace.",
+      "accent": "violet"
+    },
+    {
+      "name": "ai-section-human",
+      "eyebrow": "Step 4",
+      "title": "Where the human mattered",
+      "body": "Four moments where a plausible result was wrong, and the check or call that caught it.",
+      "accent": "warn"
+    },
+    {
+      "name": "ai-section-built",
+      "eyebrow": "Step 5",
+      "title": "What the agent built",
+      "body": "Pipeline, metric views, Genie agent, dashboard and checks, end to end.",
+      "accent": "good"
+    },
+    {
+      "name": "ai-section-template",
+      "eyebrow": "Step 6",
+      "title": "Use it as a template",
+      "body": "A four-step workflow for running your own agent-built pipeline with a human as architect.",
       "accent": "bad"
     }
   ],
